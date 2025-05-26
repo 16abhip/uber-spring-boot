@@ -122,4 +122,6 @@ public class RiderServiceImpl implements RiderService {
                 "Rider not found with userId: " + user.getId()
         ));
     }
+
+
 }

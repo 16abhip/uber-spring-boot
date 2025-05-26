@@ -2,6 +2,7 @@ package com.project.uber.uberApp.controllers;
 
 import com.project.uber.uberApp.dto.*;
 import com.project.uber.uberApp.services.DriverService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/drivers")
 @RequiredArgsConstructor
 @Secured("ROLE_DRIVER")
+@Tag(name = "Driver Controller", description = "Endpoints related to Drivers (status, location updates, etc.)")
 public class DriverController {
     private final DriverService driverService;
 

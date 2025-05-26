@@ -2,6 +2,8 @@ package com.project.uber.uberApp.controllers;
 
 import com.project.uber.uberApp.dto.*;
 import com.project.uber.uberApp.services.AuthService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.support.HttpRequestHandlerServlet;
 
 import java.util.Arrays;
-
+@Tag(name = "Auth Controller", description = "Authentication and driver onboarding endpoints")
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
@@ -25,6 +27,10 @@ public class AuthController {
     ResponseEntity<UserDto> signUp(@RequestBody SignUpDto signUpDto){
         return new ResponseEntity<>(authService.signup(signUpDto), HttpStatus.CREATED);
     }
+    @Operation(
+            summary = "Onboard new driver",
+            description = "<b>Only accessible by Admin.</b><br>This endpoint is used to onboard a new driver by user ID."
+    )
     @Secured("ROLE_ADMIN")
     @PostMapping("/onboardNewDriver/{userId}")
     ResponseEntity<DriverDto> onboardNewDriver(@PathVariable Long userId, @RequestBody OnboardDriverDto onboardDriverDto){

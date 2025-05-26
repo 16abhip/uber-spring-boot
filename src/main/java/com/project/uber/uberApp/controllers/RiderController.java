@@ -3,6 +3,7 @@ package com.project.uber.uberApp.controllers;
 import com.project.uber.uberApp.dto.*;
 import com.project.uber.uberApp.entities.Ride;
 import com.project.uber.uberApp.services.RiderService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/riders")
 @RequiredArgsConstructor
 @Secured("ROLE_RIDER")
-
+@Tag(name = "Rider Controller", description = "Endpoints related to Riders (booking, ride history, etc.)")
 public class RiderController {
     private final RiderService riderService;
 
@@ -42,7 +43,6 @@ public class RiderController {
     public ResponseEntity<Page<RideDto>> getMyRides(@RequestParam(defaultValue = "0") Integer pageOffset, @RequestParam(defaultValue = "1", required = false) Integer pageSize){
         PageRequest pageRequest = PageRequest.of(pageOffset, pageSize, Sort.by(Sort.Direction.DESC, "createdTime", "id"));
         return ResponseEntity.ok(riderService.getAllMyRides(pageRequest));
-
     }
 
 }
