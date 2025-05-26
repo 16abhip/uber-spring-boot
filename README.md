@@ -1,4 +1,5 @@
 # 🚗 Uber Ride Booking Backend
+![Architecture Diagram for Uber Ride Booking Backend](https://i.postimg.cc/XJ8c3MXN/Screenshot-2025-05-24-at-12-28-41-PM.png)
 
 A robust, scalable, and production-ready backend inspired by Uber. Built using **Java Spring Boot**, integrated with **PostgreSQL**, secured with **JWT**, and deployed on **AWS Elastic Beanstalk**. It provides key ride-booking functionalities including real-time matching, dynamic pricing, wallet/payment systems, and more.
 
@@ -104,9 +105,4 @@ src
 * Database is hosted on **AWS RDS (PostgreSQL)**
 * CI/CD pipeline powered by **AWS CodePipeline**
 
----
-
-## 📸 Architecture Diagram
-
-![Architecture Diagram for Uber Ride Booking Backend](https://i.postimg.cc/XJ8c3MXN/Screenshot-2025-05-24-at-12-28-41-PM.png)
 
