@@ -6,7 +6,7 @@ A robust, scalable, and production-ready backend inspired by Uber. Built using *
 
 ## 🔧 Tech Stack
 
-- **Java 17 + Spring Boot** – Backend development and RESTful APIs
+- **Java + Spring Boot** – Backend development and RESTful APIs
 - **Spring Security + JWT** – Authentication & Authorization (with refresh tokens)
 - **PostgreSQL** – Primary data storage with spatial support for geo-queries
 - **Hibernate & JPA** – ORM for managing persistence
